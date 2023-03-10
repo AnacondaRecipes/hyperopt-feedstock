@@ -10,35 +10,44 @@ source:
   sha256: 1bf89ae58050bbd32c7307199046117feee245c2fd9ab6255c7308522b7ca149
 
 build:
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps
   entry_points:
     - hyperopt-mongo-worker=hyperopt.mongoexp:main
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
 
 requirements:
   host:
+    - python
+    - numpy
     - pip
-    - python >=3.6
+    - setuptools
+    - wheel
   run:
+    - python
     - cloudpickle
     - future
     - networkx >=2.2
+    # see numpy pinnings https://github.com/conda-forge/hyperopt-feedstock/pull/11/commits/349d44f2aacf045fbef322d0a4d3e7a4a3eab456
     - numpy >=1.17
     - py4j
-    - python >=3.6
     - scipy
     - six
     - tqdm
+  run_constrained:
+    - pymongo
+    - pyspark
+    - lightgbm
+    - scikit-learn
 
 test:
   imports:
     - hyperopt
+    - hyperopt.pyll
+  requires:
+    - pip
   commands:
     - pip check
     - hyperopt-mongo-worker --help
-  requires:
-    - pip
 
 about:
   home: https://github.com/hyperopt/hyperopt
