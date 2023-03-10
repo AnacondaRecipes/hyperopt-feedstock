@@ -58,7 +58,7 @@ about:
   description: |
     Hyperopt is a Python library for serial and parallel optimization over awkward search spaces,
     which may include real-valued, discrete, and conditional dimensions.
-  doc_url: http://hyperopt.github.io/hyperopt/
+  doc_url: https://hyperopt.github.io/hyperopt/
   dev_url: https://github.com/hyperopt/hyperopt
 
 extra:
