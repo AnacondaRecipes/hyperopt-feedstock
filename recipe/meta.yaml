@@ -18,7 +18,7 @@ build:
 requirements:
   host:
     - python
-    - numpy ={{ numpy }}
+    - numpy {{ numpy }}
     - pip
     - setuptools
     - wheel
