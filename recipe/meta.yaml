@@ -1,3 +1,4 @@
+# this package is not intended to go on the default channel
 {% set name = "hyperopt" %}
 {% set version = "0.2.7" %}
 
