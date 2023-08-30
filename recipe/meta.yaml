@@ -11,8 +11,8 @@ source:
   sha256: 1bf89ae58050bbd32c7307199046117feee245c2fd9ab6255c7308522b7ca149
 
 build:
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv --no-deps
+  number: 1
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
     - hyperopt-mongo-worker=hyperopt.mongoexp:main
 
